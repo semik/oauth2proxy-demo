@@ -1,0 +1,22 @@
+services:
+  oauth2-proxy:
+    image: "quay.io/oauth2-proxy/oauth2-proxy:v7.6.0-alpine"
+    command: # command is command for entrypoint !@#$!! so it's args in K8s
+       - --config=/etc/oauth2_proxy/oauth2_proxy.cfg
+    container_name: oauth2-proxy
+    ports:
+      - 4180:4180
+      - 4443:4443
+    env_file:
+      - docker_secrets.env
+    volumes:
+      - "./oauth2_proxy.cfg:/etc/oauth2_proxy/oauth2_proxy.cfg:ro"
+
+  web:
+    image: php:8.2.24-apache-bullseye
+    container_name: web
+    # used image php:apache internaly listen to TCP/80
+    ports:
+      - 8080:80
+    volumes:
+      - ./index.php:/var/www/html/index.php
