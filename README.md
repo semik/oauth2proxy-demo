@@ -16,4 +16,4 @@ and also enviroment variables:
 
 ![Screenshot at 2024-09-27 12-05-55](https://github.com/user-attachments/assets/b0266f6a-75f8-4aac-848e-8785a28b3b1c)
 
-To get this demo working you need to registrer your client in gitlab.com administrative interface and provide secrets values into `docker_secrets.env` see [1-withPHPinApache/docker_secrets.env.example](docker_secrets.env.example) for an example.
+To get this demo working you need to registrer your client in gitlab.com administrative interface and provide secrets values into `docker_secrets.env` see [docker_secrets.env.example](1-withPHPinApache/docker_secrets.env.example) for an example.
